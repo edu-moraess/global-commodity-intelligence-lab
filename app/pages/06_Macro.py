@@ -6,14 +6,14 @@ if str(ROOT) not in sys.path:
 
 import streamlit as st
 from app.components.layout import inject_css, status_bar
-from src.database.repository import DataRepository
+from src.database.repository import get_repository
 from src.macro.engine import build_macro_summary
 
 st.set_page_config(page_title="Macro | GCIL", layout="wide")
 inject_css()
 st.title("🌐 Macro")
 
-repo = DataRepository(prefer_mock=True)
+repo = get_repository()
 _, macro, _, meta = repo.load_latest()
 status_bar(meta, n_records=len(macro))
 
@@ -28,10 +28,5 @@ else:
 
 st.markdown("""
 **Components of GLOBAL MACRO REGIME (conceptual):**
-- Growth
-- Inflation
-- Liquidity
-- Rates
-- USD
-- Commodity Demand
+- Growth · Inflation · Liquidity · Rates · USD · Commodity Demand
 """)
