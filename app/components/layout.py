@@ -29,22 +29,50 @@ def inject_css():
 
 
 def status_bar(meta: Dict[str, Any], n_records: int = 0, quality: float | None = None):
-    mode = meta.get("mode", "UNKNOWN")
+    """
+    Clear LIVE vs DEMO distinction.
+
+    meta keys expected:
+      mode: MOCK | RAW
+      source, date, errors, ok, data_mode_config
+    """
+    mode = str(meta.get("mode", "UNKNOWN")).upper()
     is_mock = mode == "MOCK"
-    dot = "status-mock" if is_mock else "status-ok"
-    label = "DEMO / MOCK DATA" if is_mock else "AVAILABLE"
-    source = meta.get("source", "MOCK_SYNTHETIC" if is_mock else "GROK_DAILY_INTELLIGENCE")
-    update = meta.get("date") or "2026-08-24 09:00"
+    is_error = meta.get("ok") is False and mode == "RAW"
+    cfg = meta.get("data_mode_config", "auto")
+
+    if is_error:
+        dot = "status-err"
+        label = "RAW ERROR"
+    elif is_mock:
+        dot = "status-mock"
+        label = "DEMO / MOCK DATA"
+    else:
+        dot = "status-ok"
+        label = "LIVE / RAW DATA"
+
+    source = meta.get("source") or ("MOCK_SYNTHETIC" if is_mock else "GROK_DAILY_INTELLIGENCE")
+    update = meta.get("date") or ("MOCK" if is_mock else "—")
     q = f"{quality:.1f}%" if quality is not None else "—"
 
     st.markdown(f"""
     <div class="metric-card">
-    <b>LAST DATA UPDATE</b> &nbsp; {update} &nbsp;|&nbsp;
-    <span class="status-dot {dot}"></span><b>DATA STATUS</b> {label} &nbsp;|&nbsp;
+    <b>DATA STATUS</b> <span class="status-dot {dot}"></span>{label} &nbsp;|&nbsp;
     <b>SOURCE</b> {source} &nbsp;|&nbsp;
+    <b>DATASET</b> {update} &nbsp;|&nbsp;
     <b>RECORDS</b> {n_records} &nbsp;|&nbsp;
-    <b>DATA QUALITY</b> {q}
+    <b>QUALITY</b> {q} &nbsp;|&nbsp;
+    <b>MODE</b> {cfg}
     </div>
     """, unsafe_allow_html=True)
+
     if is_mock:
-        st.warning("⚠️ DEMO / MOCK DATA — Not real market data. For architecture validation only.")
+        st.warning(
+            "⚠️ DEMO / MOCK DATA — Not real market data. "
+            "For architecture validation only. Switch to LIVE when RAW is available."
+        )
+    elif is_error:
+        errs = meta.get("errors") or ["Unknown RAW error"]
+        st.error("❌ RAW mode active but no valid dataset loaded.\n" + "\n".join(str(e) for e in errs))
+    else:
+        st.success(f"✅ LIVE / RAW DATA — Source: {source} | Dataset: {update}")
