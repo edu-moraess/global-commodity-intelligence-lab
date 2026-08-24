@@ -51,15 +51,15 @@ ENV/
 # Streamlit
 .streamlit/secrets.toml
 
-# Data (keep structure, ignore large files)
-data/raw/**/*.json
-!data/raw/.gitkeep
+# Data layers
+# RAW JSON is the source of truth for daily Grok feeds — MUST be versioned.
+# Do NOT ignore data/raw/**/*.json
 data/processed/**/*.parquet
 !data/processed/.gitkeep
 data/historical/**/*.parquet
 !data/historical/.gitkeep
 
-# Reports
+# Reports (regenerable)
 reports/daily/**/*
 !reports/daily/.gitkeep
 reports/archive/**/*
