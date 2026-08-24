@@ -1,4 +1,4 @@
-"""Overview page (mirrors main for multipage consistency)."""
+"""Overview page."""
 
 import sys
 from pathlib import Path
@@ -10,15 +10,14 @@ import streamlit as st
 from app.components.layout import inject_css, status_bar
 from app.components.charts import price_bar, returns_heatmap, ranking_bar
 from app.components.cards import top_movers
-from src.database.repository import DataRepository
-from src.geopolitics.engine import geopolitical_risk_score
+from src.database.repository import get_repository
 from src.ingestion.validator import quality_report
 
 st.set_page_config(page_title="Overview | GCIL", layout="wide")
 inject_css()
 st.title("Overview")
 
-repo = DataRepository(prefer_mock=True)
+repo = get_repository()
 cmd, macro, geo, meta = repo.load_latest()
 n = len(cmd)
 q = quality_report(cmd).get("completeness") if not cmd.empty else None
