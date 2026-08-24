@@ -7,14 +7,14 @@ if str(ROOT) not in sys.path:
 import streamlit as st
 from app.components.layout import inject_css, status_bar
 from app.components.charts import price_bar, ranking_bar
-from src.database.repository import DataRepository
+from src.database.repository import get_repository
 from src.ingestion.validator import quality_report
 
 st.set_page_config(page_title="Fertilizers | GCIL", layout="wide")
 inject_css()
 st.title("🧪 Fertilizers")
 
-repo = DataRepository(prefer_mock=True)
+repo = get_repository()
 cmd, _, _, meta = repo.load_latest()
 df = cmd[cmd["category"] == "FERTILIZERS"] if not cmd.empty else cmd
 n = len(df)
