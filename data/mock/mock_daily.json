@@ -1,0 +1,49 @@
+{
+  "dataset_date": "2026-08-24",
+  "generated_at": "2026-08-24T09:00:00Z",
+  "source": "MOCK_SYNTHETIC",
+  "version": "1.0",
+  "metadata": {
+    "note": "SYNTHETIC DATA FOR VALIDATION ONLY — NOT REAL MARKET DATA",
+    "records": 30
+  },
+  "commodities": [
+    {"date": "2026-08-24", "asset": "WTI", "ticker": "CL", "category": "ENERGY", "currency": "USD", "unit": "USD/bbl", "spot_price": 78.45, "front_future": 78.60, "future_m1": 78.90, "future_m2": 79.20, "future_m3": 79.50, "daily_change": 0.012, "weekly_change": -0.018, "monthly_change": 0.045, "volume": 320000, "open_interest": 2100000, "implied_volatility": 0.28, "historical_volatility": 0.25, "curve_structure": "CONTANGO", "directional_bias": "NEUTRAL", "supply_risk": 45, "demand_risk": 40, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Brent", "ticker": "BZ", "category": "ENERGY", "currency": "USD", "unit": "USD/bbl", "spot_price": 82.10, "front_future": 82.30, "future_m1": 82.55, "daily_change": 0.008, "weekly_change": -0.015, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Natural Gas", "ticker": "NG", "category": "ENERGY", "currency": "USD", "unit": "USD/MMBtu", "spot_price": 2.85, "front_future": 2.90, "future_m1": 3.05, "daily_change": -0.022, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Coal", "ticker": "COAL", "category": "ENERGY", "currency": "USD", "unit": "USD/t", "spot_price": 125.0, "daily_change": 0.005, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Uranium", "ticker": "U3O8", "category": "ENERGY", "currency": "USD", "unit": "USD/lb", "spot_price": 82.5, "daily_change": 0.015, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Gold", "ticker": "GC", "category": "METALS", "currency": "USD", "unit": "USD/oz", "spot_price": 2485.0, "front_future": 2490.0, "future_m1": 2505.0, "daily_change": 0.006, "weekly_change": 0.012, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Silver", "ticker": "SI", "category": "METALS", "currency": "USD", "unit": "USD/oz", "spot_price": 28.75, "daily_change": 0.018, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Copper", "ticker": "HG", "category": "METALS", "currency": "USD", "unit": "USD/lb", "spot_price": 4.15, "front_future": 4.18, "future_m1": 4.22, "daily_change": -0.01, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Aluminium", "ticker": "ALI", "category": "METALS", "currency": "USD", "unit": "USD/t", "spot_price": 2450.0, "daily_change": 0.003, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Iron Ore", "ticker": "IO", "category": "METALS", "currency": "USD", "unit": "USD/t", "spot_price": 105.0, "daily_change": -0.008, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Nickel", "ticker": "NI", "category": "METALS", "currency": "USD", "unit": "USD/t", "spot_price": 16800.0, "daily_change": 0.022, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Lithium", "ticker": "LI", "category": "METALS", "currency": "USD", "unit": "USD/t", "spot_price": 12500.0, "daily_change": -0.035, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Soybeans", "ticker": "ZS", "category": "AGRICULTURE", "currency": "USD", "unit": "USc/bu", "spot_price": 1025.0, "front_future": 1030.0, "daily_change": 0.009, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Corn", "ticker": "ZC", "category": "AGRICULTURE", "currency": "USD", "unit": "USc/bu", "spot_price": 412.0, "daily_change": -0.005, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Wheat", "ticker": "ZW", "category": "AGRICULTURE", "currency": "USD", "unit": "USc/bu", "spot_price": 565.0, "daily_change": 0.014, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Coffee", "ticker": "KC", "category": "AGRICULTURE", "currency": "USD", "unit": "USc/lb", "spot_price": 245.0, "daily_change": 0.028, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Sugar", "ticker": "SB", "category": "AGRICULTURE", "currency": "USD", "unit": "USc/lb", "spot_price": 19.8, "daily_change": -0.012, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Cotton", "ticker": "CT", "category": "AGRICULTURE", "currency": "USD", "unit": "USc/lb", "spot_price": 72.5, "daily_change": 0.004, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Cocoa", "ticker": "CC", "category": "AGRICULTURE", "currency": "USD", "unit": "USD/t", "spot_price": 7200.0, "daily_change": -0.045, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Live Cattle", "ticker": "LE", "category": "AGRICULTURE", "currency": "USD", "unit": "USc/lb", "spot_price": 185.0, "daily_change": 0.007, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Urea", "ticker": "UREA", "category": "FERTILIZERS", "currency": "USD", "unit": "USD/t", "spot_price": 340.0, "daily_change": 0.01, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "DAP", "ticker": "DAP", "category": "FERTILIZERS", "currency": "USD", "unit": "USD/t", "spot_price": 580.0, "daily_change": -0.006, "source": "MOCK"},
+    {"date": "2026-08-24", "asset": "Potash", "ticker": "POT", "category": "FERTILIZERS", "currency": "USD", "unit": "USD/t", "spot_price": 310.0, "daily_change": 0.002, "source": "MOCK"}
+  ],
+  "macro": [
+    {"date": "2026-08-24", "indicator": "DXY", "region": "US", "value": 104.2, "previous": 103.9, "change": 0.003, "unit": "index", "source": "MOCK"},
+    {"date": "2026-08-24", "indicator": "US 10Y Yield", "region": "US", "value": 4.25, "previous": 4.22, "unit": "%", "source": "MOCK"},
+    {"date": "2026-08-24", "indicator": "Fed Funds Rate", "region": "US", "value": 5.25, "unit": "%", "source": "MOCK"},
+    {"date": "2026-08-24", "indicator": "ECB Deposit Rate", "region": "EU", "value": 3.75, "unit": "%", "source": "MOCK"},
+    {"date": "2026-08-24", "indicator": "US CPI YoY", "region": "US", "value": 2.9, "previous": 3.0, "unit": "%", "source": "MOCK"},
+    {"date": "2026-08-24", "indicator": "China PMI", "region": "CN", "value": 50.2, "previous": 49.8, "unit": "index", "source": "MOCK"},
+    {"date": "2026-08-24", "indicator": "Brazil Selic", "region": "BR", "value": 10.5, "unit": "%", "source": "MOCK"}
+  ],
+  "geopolitics": [
+    {"event_id": "GEO-2026-001", "date": "2026-08-24", "region": "Middle East", "country": "Various", "event_type": "supply_risk", "severity": 6.5, "supply_impact": 0.7, "demand_impact": 0.2, "affected_commodities": ["WTI", "Brent", "Natural Gas"], "summary": "Elevated shipping risk in key energy corridors (synthetic scenario).", "source": "MOCK"},
+    {"event_id": "GEO-2026-002", "date": "2026-08-23", "region": "South America", "country": "Brazil", "event_type": "weather", "severity": 4.0, "supply_impact": 0.4, "affected_commodities": ["Soybeans", "Corn", "Coffee"], "summary": "Seasonal weather anomaly affecting southern grain belt (synthetic).", "source": "MOCK"},
+    {"event_id": "GEO-2026-003", "date": "2026-08-22", "region": "Asia", "country": "China", "event_type": "regulatory", "severity": 5.0, "demand_impact": 0.5, "affected_commodities": ["Copper", "Iron Ore", "Lithium"], "summary": "Policy signals on industrial metals demand (synthetic).", "source": "MOCK"}
+  ]
+}
