@@ -6,14 +6,14 @@ if str(ROOT) not in sys.path:
 
 import streamlit as st
 from app.components.layout import inject_css, status_bar
-from src.database.repository import DataRepository
+from src.database.repository import get_repository
 from src.geopolitics.engine import geopolitical_risk_score
 
 st.set_page_config(page_title="Geopolitics | GCIL", layout="wide")
 inject_css()
 st.title("🛰️ Geopolitics")
 
-repo = DataRepository(prefer_mock=True)
+repo = get_repository()
 _, _, geo, meta = repo.load_latest()
 status_bar(meta, n_records=len(geo))
 
