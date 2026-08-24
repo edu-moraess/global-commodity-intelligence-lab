@@ -1,7 +1,11 @@
 [app]
 name = "Global Commodity Intelligence Lab"
-version = "0.1.0"
-data_mode = "mock"  # mock | live
+version = "0.2.0"
+# data_mode: auto | mock | raw
+#   auto — use latest valid RAW if available, otherwise MOCK
+#   mock — always MOCK
+#   raw  — RAW only; error if none available
+data_mode = "auto"
 
 [paths]
 raw = "data/raw"
